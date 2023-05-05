@@ -5,10 +5,22 @@
 //  Created by 한설 on 2023/05/04.
 //
 
-#include <stdio.h>
+#include "Closet.h"
+
+static void checktime(void(*func)(void));          //시간 체크
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+    checktime(TC1_mycode);
     return 0;
+}
+
+void checktime(void(*func)(void))
+{
+    clock_t start, finish;
+    double duration;
+    start = clock();
+    (*func)();
+    finish = clock();
+    duration = (double)(finish - start) / CLOCKS_PER_SEC;
+    printf("\n================%lf초입니다.================\n", duration);
 }

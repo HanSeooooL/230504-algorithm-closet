@@ -10,7 +10,10 @@
 static void checktime(void(*func)(void));          //시간 체크
 
 int main(int argc, const char * argv[]) {
-    checktime(TC1_mycode);
+    checktime(TC1_TwoPoint);
+    checktime(TC2_TenPoint);
+    checktime(TC3_OddPoint);
+    checktime(TC4_Hunnitpoint);
     return 0;
 }
 

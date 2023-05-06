@@ -24,6 +24,9 @@ Point *closet(Point *a, int left, int right, int n);       //점 구하기 함�
 double distance(Point a, Point b);          //거리구하기 함수
 
 //TestFunc
-void TC1_mycode(void);
+void TC1_TwoPoint(void);    //두개의 점
+void TC2_TenPoint(void);    //열개의 점
+void TC3_OddPoint(void);    //홀수개의 점
+void TC4_Hunnitpoint(void); //100개의 점
 
 #endif /* Closet_h */

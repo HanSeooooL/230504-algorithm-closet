@@ -6,7 +6,9 @@
 //
 
 #include "Closet.h"
+#include <float.h>
 
+static Point *centerclose(Point *a, int l, int r);
 
 Point *closet(Point *a, int l, int r, int n)
 {
@@ -14,20 +16,7 @@ Point *closet(Point *a, int l, int r, int n)
     double shortest;
     if (n <= 3)         //점이 3개 이하인 경우
     {
-        res = (Point*)malloc(sizeof(Point) * 2);
-        shortest = distance(a[r], a[l]);
-        res[0] = a[l];
-        res[1] = a[r];
-        
-        for(int i = l; i < r; i++)
-        {
-            if(shortest > distance(a[i], a[i + 1]))
-            {
-                shortest = distance(a[i], a[i + 1]);
-                res[0] = a[i];
-                res[1] = a[i + 1];
-            }
-        }
+        res = centerclose(a, l, r);
         return res;
     }
     else {              //점이 3개 이상인 경우
@@ -54,22 +43,26 @@ Point *closet(Point *a, int l, int r, int n)
             cr--;
         }
         
-        centerres = closet(a, cl, cr, cr - cl);
+        centerres = centerclose(a, cl, cr);
         
         if (distance(centerres[0], centerres[1]) <= shortest)
         {
+            free(rightres);
+            free(leftres);
             return centerres;
         }
         else {
             if (who == 0) {
+                free(centerres);
+                free(rightres);
                 return leftres;
             }
             else {
+                free(centerres);
+                free(leftres);
                 return rightres;
             }
         }
-        
-        
     }
 }
 
@@ -77,10 +70,33 @@ double distance(Point a, Point b)   //거리구하기 함수
 {
     double distance = 0;
     double x, y;
-    x = (double)b.x - (double)a.x;
+    x = (double)b.x - (double)a.x;  //차 계산
     y = (double)b.y - (double)a.y;
-    x = fabs(x);
+    x = fabs(x);    //절댓값 변환
     y = fabs(y);
     distance = sqrt((x * x) + (y * y));
     return distance;
+}
+
+
+Point *centerclose(Point *a, int l, int r)
+{
+    Point *res;
+    double shortest;
+    int n;
+    n = r - l + 1;
+    res = (Point*)malloc(sizeof(Point) * 2);
+    shortest = DBL_MAX;
+    
+    for(int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if(shortest > distance(a[i], a[j])) {
+                shortest = distance(a[i], a[j]);
+                res[0] = a[i];
+                res[1] = a[j];
+            }
+        }
+    }
+    
+    return res;
 }

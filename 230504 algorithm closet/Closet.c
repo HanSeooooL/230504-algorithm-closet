@@ -23,6 +23,7 @@ Point *closet(Point *a, int l, int r, int n)
     else {              //점이 3개 이상인 경우
         int m = (r + l) / 2;
         int who, cl = l, cr = r;
+        
         //왼쪽 오른쪽 분할
         leftres = closet(a, l, m, m - l + 1);   //왼쪽 결과 쌍 도출
         rightres = closet(a, m + 1, r, r - m + 1);      //오른쪽 결과 쌍 도출

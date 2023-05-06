@@ -13,8 +13,9 @@ static void filesave(Point *a, char *name);        //파일 저장
 static Point *filelead(char *name, int *n);        //파일 읽기
 static int compare(const void *a, const void *b);  //비교함수
 
-void TC1_TwoPoint(void)
+void TC1_TwoPoint(void)     //2개의 점일 때
 {
+    printf("\n=================TC1 TwoPoint=================\n");
     Point *arr = NULL, *res = NULL;
     int n = 0; //n은 점의 개수를 표현
     arr = filelead("test1.txt", &n);
@@ -35,13 +36,14 @@ void TC1_TwoPoint(void)
     printf("\n");
     
     res = closet(arr, 0, n - 1, n);
-    printf("\n최단 점의 쌍은 %d %d와 %d %d입니다.\n", res[0].x, res[0].y, res[1].x, res[1].y);
+    printf("최단 점의 쌍은 %d %d와 %d %d입니다.\n", res[0].x, res[0].y, res[1].x, res[1].y);
     printf("거리는 %.3lf", distance(res[0], res[1]));
     filesave(res, "result1.txt");
 }
 
-void TC2_TenPoint(void)
+void TC2_TenPoint(void)     //10개의 점일 때
 {
+    printf("\n=================TC2 TenPoint=================\n");
     Point *arr = NULL, *res = NULL;
     int n = 0; //n은 점의 개수를 표현
     arr = filelead("test2.txt", &n);
@@ -62,13 +64,14 @@ void TC2_TenPoint(void)
     printf("\n");
     
     res = closet(arr, 0, n - 1, n);
-    printf("\n최단 점의 쌍은 %d %d와 %d %d입니다.\n", res[0].x, res[0].y, res[1].x, res[1].y);
+    printf("최단 점의 쌍은 %d %d와 %d %d입니다.\n", res[0].x, res[0].y, res[1].x, res[1].y);
     printf("거리는 %.3lf", distance(res[0], res[1]));
     filesave(res, "result2.txt");
 }
 
-void TC3_OddPoint(void)
+void TC3_OddPoint(void)     //홀수갯수의 점일 때 (11개)
 {
+    printf("\n=================TC3 OddPoint=================\n");
     Point *arr = NULL, *res = NULL;
     int n = 0; //n은 점의 개수를 표현
     arr = filelead("test3.txt", &n);
@@ -89,13 +92,14 @@ void TC3_OddPoint(void)
     printf("\n");
     
     res = closet(arr, 0, n - 1, n);
-    printf("\n최단 점의 쌍은 %d %d와 %d %d입니다.\n", res[0].x, res[0].y, res[1].x, res[1].y);
+    printf("최단 점의 쌍은 %d %d와 %d %d입니다.\n", res[0].x, res[0].y, res[1].x, res[1].y);
     printf("거리는 %.3lf", distance(res[0], res[1]));
     filesave(res, "result3.txt");
 }
 
-void TC4_Hunnitpoint(void)
+void TC4_Hunnitpoint(void)      //100개의 점일 때
 {
+    printf("\n=================TC4 HunnitPoint=================\n");
     Point *arr = NULL, *res = NULL;
     int n = 0; //n은 점의 개수를 표현
     arr = filelead("test4.txt", &n);
@@ -116,7 +120,7 @@ void TC4_Hunnitpoint(void)
     printf("\n");
     
     res = closet(arr, 0, n - 1, n);
-    printf("\n최단 점의 쌍은 %d %d와 %d %d입니다.\n", res[0].x, res[0].y, res[1].x, res[1].y);
+    printf("최단 점의 쌍은 %d %d와 %d %d입니다.\n", res[0].x, res[0].y, res[1].x, res[1].y);
     printf("거리는 %.3lf", distance(res[0], res[1]));
     filesave(res, "result4.txt");
 }
@@ -169,14 +173,14 @@ void filesave(Point *a, char *name)
 
 int compare(const void *a, const void *b)
 {
-    Point num1 = *(Point *)a;
-    Point num2 = *(Point *)b;
+    Point num1 = *(Point *)a;   //구조체 a 기입
+    Point num2 = *(Point *)b;   //구조체 b 기입
     
-    if (num1.x < num2.x)
+    if (num1.x < num2.x)    //num2(b)의 x값이 더 큰 경우
         return -1;
     
-    if (num1.x > num2.x)
+    if (num1.x > num2.x)    //num1(a)의 x값이 더 큰 경우
         return 1;
     
-    return 0;
+    return 0;               //같을 경우
 }

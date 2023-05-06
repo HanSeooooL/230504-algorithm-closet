@@ -25,6 +25,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A41925AE2A06BBC300F793F3 /* test3.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test3.txt; sourceTree = "<group>"; };
+		A41925AF2A06BBC300F793F3 /* test4.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test4.txt; sourceTree = "<group>"; };
+		A41925B02A06BBC300F793F3 /* result4.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = result4.txt; sourceTree = "<group>"; };
+		A41925B12A06BBC300F793F3 /* result1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = result1.txt; sourceTree = "<group>"; };
+		A41925B22A06BBC300F793F3 /* test1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test1.txt; sourceTree = "<group>"; };
+		A41925B32A06BBC300F793F3 /* test2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test2.txt; sourceTree = "<group>"; };
+		A41925B42A06BBC300F793F3 /* result2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = result2.txt; sourceTree = "<group>"; };
+		A41925B52A06BBC300F793F3 /* result3.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = result3.txt; sourceTree = "<group>"; };
 		A4AAF0DF2A03E2D200D2F08D /* 230504 algorithm closet */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "230504 algorithm closet"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4AAF0E22A03E2D200D2F08D /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		A4AAF0E92A0506DA00D2F08D /* Closet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Closet.h; sourceTree = "<group>"; };
@@ -66,6 +74,14 @@
 				A4AAF0EC2A05081B00D2F08D /* test.c */,
 				A4AAF0E92A0506DA00D2F08D /* Closet.h */,
 				A4AAF0EA2A0506DA00D2F08D /* Closet.c */,
+				A41925B12A06BBC300F793F3 /* result1.txt */,
+				A41925B42A06BBC300F793F3 /* result2.txt */,
+				A41925B52A06BBC300F793F3 /* result3.txt */,
+				A41925B02A06BBC300F793F3 /* result4.txt */,
+				A41925B22A06BBC300F793F3 /* test1.txt */,
+				A41925B32A06BBC300F793F3 /* test2.txt */,
+				A41925AE2A06BBC300F793F3 /* test3.txt */,
+				A41925AF2A06BBC300F793F3 /* test4.txt */,
 			);
 			path = "230504 algorithm closet";
 			sourceTree = "<group>";

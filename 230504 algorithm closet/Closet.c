@@ -7,6 +7,7 @@
 
 #include "Closet.h"
 #include <float.h>
+#include <math.h>
 
 static Point *centerclose(Point *a, int l, int r);
 
@@ -43,24 +44,24 @@ Point *closet(Point *a, int l, int r, int n)
             cr--;
         }
         
-        centerres = centerclose(a, cl, cr);
+        centerres = centerclose(a, cl, cr);     //중간지점 최단거리 점의 쌍 대입
         
-        if (distance(centerres[0], centerres[1]) <= shortest)
+        if (distance(centerres[0], centerres[1]) <= shortest)   //중간지점이 더 짧은 경우
         {
-            free(rightres);
+            free(rightres);     //메모리 반납
             free(leftres);
-            return centerres;
+            return centerres;   //중간 최단거리 점의 쌍 반환
         }
         else {
-            if (who == 0) {
+            if (who == 0) { //shortest에 왼쪽 값 기입되어 있을 때
                 free(centerres);
                 free(rightres);
-                return leftres;
+                return leftres;     //왼쪽 최단거리 점의 쌍 반환
             }
-            else {
+            else {          //shortest에 오른쪽 값 기입되어 있을 때
                 free(centerres);
                 free(leftres);
-                return rightres;
+                return rightres;    //오른쪽 최단거리 점의 쌍 반환
             }
         }
     }

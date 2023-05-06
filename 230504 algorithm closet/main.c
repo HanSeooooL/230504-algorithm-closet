@@ -6,6 +6,7 @@
 //
 
 #include "Closet.h"
+#include <time.h>
 
 static void checktime(void(*func)(void));          //시간 체크
 
@@ -17,7 +18,7 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
-void checktime(void(*func)(void))
+void checktime(void(*func)(void))   //실행시간 체크
 {
     clock_t start, finish;
     double duration;

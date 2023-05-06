@@ -21,11 +21,13 @@ void TC1_mycode(void)
     
     for(int i = 0; i < n; i++)
         printf("%d %d\n", arr[i].x, arr[i].y);
+    printf("n: %d\n", n);
     qsort(arr, n, sizeof(Point), compare);
     printf("\n");
     printf("정렬 후 \n");
     for(int i = 0; i < n; i++)
         printf("%d %d\n", arr[i].x, arr[i].y);
+    printf("\n");
     
     res = closet(arr, 0, n - 1, n);
     printf("\n최단 점의 쌍은 %d %d와 %d %d입니다.\n", res[0].x, res[0].y, res[1].x, res[1].y);
@@ -52,8 +54,8 @@ Point *filelead(char *name, int *n)
             }
             x = strtok(str, " ");                   //공백기준 토큰화
             y = strtok(NULL, " ");                  //공백기준 토큰화
-            point.x = atoi(x);                      //문자형태 숫자 int형으로 형변환
-            point.y = atoi(y);                      //문자형태 숫자 int형으로 형변환
+            point.x = atoi(x);                      //Ascii형태 int형으로 형변환
+            point.y = atoi(y);                      //Ascii형태 int형으로 형변환
             *(arr + *n) = point;                    //arr배열의 n번째 칸에 point 대입
             *n = *n + 1;                            //반복할때마다 +1 (점의 개수 파악)
         }

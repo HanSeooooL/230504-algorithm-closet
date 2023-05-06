@@ -28,7 +28,7 @@ void TC1_TwoPoint(void)     //2개의 점일 때
         exit(1);
     }
     printf("n: %d\n", n);
-    qsort(arr, n, sizeof(Point), compare);
+    qsort(arr, n, sizeof(Point), compare);  //정렬
     printf("\n");
     printf("정렬 후 \n");
     for(int i = 0; i < n; i++)
@@ -36,6 +36,7 @@ void TC1_TwoPoint(void)     //2개의 점일 때
     printf("\n");
     
     res = closet(arr, 0, n - 1, n);
+    
     printf("최단 점의 쌍은 %d %d와 %d %d입니다.\n", res[0].x, res[0].y, res[1].x, res[1].y);
     printf("거리는 %.3lf", distance(res[0], res[1]));
     filesave(res, "result1.txt");
@@ -56,7 +57,7 @@ void TC2_TenPoint(void)     //10개의 점일 때
         exit(1);
     }
     printf("n: %d\n", n);
-    qsort(arr, n, sizeof(Point), compare);
+    qsort(arr, n, sizeof(Point), compare);  //정렬
     printf("\n");
     printf("정렬 후 \n");
     for(int i = 0; i < n; i++)
@@ -64,6 +65,7 @@ void TC2_TenPoint(void)     //10개의 점일 때
     printf("\n");
     
     res = closet(arr, 0, n - 1, n);
+    
     printf("최단 점의 쌍은 %d %d와 %d %d입니다.\n", res[0].x, res[0].y, res[1].x, res[1].y);
     printf("거리는 %.3lf", distance(res[0], res[1]));
     filesave(res, "result2.txt");
@@ -84,7 +86,7 @@ void TC3_OddPoint(void)     //홀수갯수의 점일 때 (11개)
         exit(1);
     }
     printf("n: %d\n", n);
-    qsort(arr, n, sizeof(Point), compare);
+    qsort(arr, n, sizeof(Point), compare);  //정렬
     printf("\n");
     printf("정렬 후 \n");
     for(int i = 0; i < n; i++)
@@ -92,6 +94,7 @@ void TC3_OddPoint(void)     //홀수갯수의 점일 때 (11개)
     printf("\n");
     
     res = closet(arr, 0, n - 1, n);
+    
     printf("최단 점의 쌍은 %d %d와 %d %d입니다.\n", res[0].x, res[0].y, res[1].x, res[1].y);
     printf("거리는 %.3lf", distance(res[0], res[1]));
     filesave(res, "result3.txt");
@@ -112,7 +115,7 @@ void TC4_Hunnitpoint(void)      //100개의 점일 때
         exit(1);
     }
     printf("n: %d\n", n);
-    qsort(arr, n, sizeof(Point), compare);
+    qsort(arr, n, sizeof(Point), compare);  //정렬
     printf("\n");
     printf("정렬 후 \n");
     for(int i = 0; i < n; i++)
@@ -120,6 +123,7 @@ void TC4_Hunnitpoint(void)      //100개의 점일 때
     printf("\n");
     
     res = closet(arr, 0, n - 1, n);
+    
     printf("최단 점의 쌍은 %d %d와 %d %d입니다.\n", res[0].x, res[0].y, res[1].x, res[1].y);
     printf("거리는 %.3lf", distance(res[0], res[1]));
     filesave(res, "result4.txt");

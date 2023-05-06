@@ -9,7 +9,7 @@
 #include <float.h>
 #include <math.h>
 
-static Point *centerclose(Point *a, int l, int r);
+static Point *pointclose(Point *a, int l, int r);   //범위 내 점중 최단거리 점의 쌍 반환
 
 Point *closet(Point *a, int l, int r, int n)
 {
@@ -17,7 +17,7 @@ Point *closet(Point *a, int l, int r, int n)
     double shortest;
     if (n <= 3)         //점이 3개 이하인 경우
     {
-        res = centerclose(a, l, r);
+        res = pointclose(a, l, r);
         return res;
     }
     else {              //점이 3개 이상인 경우
@@ -44,7 +44,7 @@ Point *closet(Point *a, int l, int r, int n)
             cr--;
         }
         
-        centerres = centerclose(a, cl, cr);     //중간지점 최단거리 점의 쌍 대입
+        centerres = pointclose(a, cl, cr);     //중간지점 최단거리 점의 쌍 대입
         
         if (distance(centerres[0], centerres[1]) <= shortest)   //중간지점이 더 짧은 경우
         {
@@ -80,7 +80,7 @@ double distance(Point a, Point b)   //거리구하기 함수
 }
 
 
-Point *centerclose(Point *a, int l, int r)
+Point *pointclose(Point *a, int l, int r)
 {
     Point *res;
     double shortest;
